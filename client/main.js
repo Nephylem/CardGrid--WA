@@ -43,7 +43,7 @@ input.addEventListener("input", () => {
   cards.forEach((card, i) => {
     let name = card.dataset.name.toLowerCase();
     if (name.includes(query)) {
-      card.style.display = "block";
+      card.style.display = "grid";
     } else {
       card.style.display = "none";
     }
@@ -55,7 +55,7 @@ select.addEventListener("change", () => {
   cards.forEach((card, i) => {
     let tags = card.dataset.tags.toLowerCase();
     if (tags.includes(tag)) {
-      card.style.display = "block";
+      card.style.display = "grid";
       console.log(true);
     } else {
       card.style.display = "none";
@@ -65,6 +65,6 @@ select.addEventListener("change", () => {
 
 reset.addEventListener("click", () => {
   cards.forEach((card) => {
-    card.style.display = "block";
+    card.style.display = "grid";
   });
 });
