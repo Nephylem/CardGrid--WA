@@ -9,7 +9,7 @@ function saveJson(data) {
   });
 }
 
-// fetch data and save to session storage using function saveJson
+// fetch data using GET request and save to session storage using function saveJson
 let url = "http://localhost:3000/cards";
 fetch(url, {
   method: "GET",
@@ -19,7 +19,6 @@ fetch(url, {
   .catch((err) => {
     alert("Failed to fetch json data");
   });
-
 
 // generating card components using function CardGenerator
 let container = document.querySelector(".block__grid--primary");

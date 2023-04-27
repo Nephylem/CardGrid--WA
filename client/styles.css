@@ -80,6 +80,14 @@ body {
   font-size: 15px;
 }
 
+.swiper-pagination-bullets.swiper-pagination-horizontal{ 
+  top: 40%;
+}
+
+.swiper-pagination-bullet{
+  background: white;
+}
+
 .area__img {
   width: 270px;
   height: auto;

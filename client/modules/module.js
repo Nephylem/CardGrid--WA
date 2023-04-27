@@ -48,6 +48,10 @@ function image__slider(imgArray, key = null) {
   navPrev.setAttribute("class", "swiper-button-prev");
   navPrev.setAttribute("data-swiper", `prev-swiper-${key}`);
 
+  let pagination = document.createElement("div");
+  pagination.setAttribute("class", "swiper-pagination");
+  pagination.setAttribute("data-swiper", `pagi-swiper-${key}`);
+
   for (let img of imgArray) {
     let div = document.createElement("div");
     div.setAttribute("class", "area__image--block swiper-slide");
@@ -58,7 +62,7 @@ function image__slider(imgArray, key = null) {
   }
 
   containerEl.append(wrapperEl);
-  containerEl.append(navNext, navPrev);
+  containerEl.append(navNext, navPrev, pagination);
 
   return containerEl;
 }
@@ -153,6 +157,10 @@ function SwiperGenerator(key) {
       nextEl: `[data-swiper="next-swiper-${key}"]`,
       prevEl: `[data-swiper="prev-swiper-${key}"]`,
     },
+    pagination: {
+      el: `[data-swiper="pagi-swiper-${key}"]`,
+      clickable: true
+    }
   });
 }
 
