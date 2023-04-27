@@ -4,7 +4,7 @@
       "title": "Cambodia",
       "address": "#123, Street 456 Sangkat 789, Khan Chamkarmon Phnom Penh",
       "tags": ["tagone", "tagtwo", "tagthree", "tagfour", "tagfive"],
-      "price": 2150.02,
+      "price": 2150.22,
       "rating": {
         "current": null,
         "total": 100,
@@ -22,7 +22,7 @@
       "title": "Malaysia",
       "address": "No. 20, Jalan Raja Chulan, 50200 Kuala Lumpur",
       "tags": ["tagsix", "tagseven", "tagfour", "tagfive"],
-      "price": 250.0,
+      "price": 5250.23,
       "rating": {
         "current": null,
         "total": 100,
@@ -39,7 +39,7 @@
       "title": "Philippines",
       "address": "123 Main Street, Barangay San Antonio Quezon City, Metro Manila 1106",
       "tags": ["tagone", "tagtwo", "tagfour", "tagfive"],
-      "price": 250.0,
+      "price": 450.24,
       "rating": {
         "current": null,
         "total": 100,
@@ -56,11 +56,11 @@
       "title": "Indonesia",
       "address": "No. 10, Kelurahan Sumber Sari - Kecamatan Sukajaya Bogor, Jawa Barat 16154",
       "tags": ["tagthree", "tagone", "tagfive"],
-      "price": 250.0,
+      "price": 2031.19,
       "rating": {
         "current": null,
         "total": 100,
-        "poll": 12
+        "poll": 25
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum aliquam commodi illum tenetur itaque recusandae amet laudantium mollitia dignissimos laboriosam corrupti officiis molestias doloribus deserunt, fuga incidunt, veniam rem odit?",
       "image": [
@@ -74,11 +74,11 @@
       "title": "Russia",
       "address": "119034 Moscow, Tverskaya Street 15 Apartment 21 Ivan Petrov",
       "tags": ["tagthree", "tagone", "tagfive"],
-      "price": 250.0,
+      "price": 550.99,
       "rating": {
         "current": null,
         "total": 100,
-        "poll": 12
+        "poll": 50
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum aliquam commodi illum tenetur itaque recusandae amet laudantium mollitia dignissimos laboriosam corrupti officiis molestias doloribus deserunt, fuga incidunt, veniam rem odit?",
       "image": [
@@ -91,11 +91,11 @@
       "title": "China",
       "address": "123 Nanjing Road, Huangpu District Shanghai 200001",
       "tags": ["tagthree", "tagone", "tagfive"],
-      "price": 250.0,
+      "price": 9150.99,
       "rating": {
         "current": null,
         "total": 100,
-        "poll": 12
+        "poll": 30
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum aliquam commodi illum tenetur itaque recusandae amet laudantium mollitia dignissimos laboriosam corrupti officiis molestias doloribus deserunt, fuga incidunt, veniam rem odit?",
       "image": [
@@ -108,11 +108,11 @@
       "title": "Japan",
       "address": "150-0043 Tokyo, Shibuya-ku, Jingumae 1-2-3, Shibuya Building 5F Yamada Taro",
       "tags": ["tagthree", "tagone", "tagfive"],
-      "price": 250.0,
+      "price": 6250.0,
       "rating": {
         "current": null,
         "total": 100,
-        "poll": 12
+        "poll": 25
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum aliquam commodi illum tenetur itaque recusandae amet laudantium mollitia dignissimos laboriosam corrupti officiis molestias doloribus deserunt, fuga incidunt, veniam rem odit?",
       "image": [
@@ -142,7 +142,7 @@
       "title": "Thailand",
       "address": "14/2, The Grand Condo, Sukhumvit Road, Khlong Toei Nuea Wattana, Bangkok 10110 Thailand",
       "tags": ["tagfour", "tagsix", "tagtwo"],
-      "price": 2500.0,
+      "price": 340.21,
       "rating": {
         "current": null,
         "total": 100,

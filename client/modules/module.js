@@ -1,19 +1,39 @@
 // components of card
 function block__grid(key = null) {
   let div = document.createElement("div");
-  div.setAttribute("class", `block__grid--card card__key--${key ? key : ""}`);
+  div.setAttribute(
+    "class",
+    `block__grid--card card__key--${key != null ? key : ""}`
+  );
   return div;
 }
 
+// heart button
 function button__heart(key = null) {
   let button = document.createElement("button");
   button.setAttribute("class", "btn--favorite");
   let icon = document.createElement("i");
-  icon.setAttribute("class", `fa-regular fa-heart key--${key ? key : ""}`);
+  icon.setAttribute(
+    "class",
+    `fa-regular fa-heart key--${key != null ? key : ""}`
+  );
 
   button.append(icon);
+
+  button.addEventListener("click", () => {
+    if (icon.getAttribute("class") === `fa-regular fa-heart key--${key}`) {
+      icon.setAttribute("class", `fas fa-heart key--${key != null ? key : ""}`);
+    } else {
+      icon.setAttribute(
+        "class",
+        `fa-regular fa-heart key--${key != null ? key : ""}`
+      );
+    }
+  });
   return button;
 }
+
+// image slider
 
 function image__slider(imgArray, key = null) {
   let containerEl = document.createElement("div");
@@ -43,6 +63,7 @@ function image__slider(imgArray, key = null) {
   return containerEl;
 }
 
+// title
 function card__title(title) {
   let div = document.createElement("div");
   div.setAttribute("class", "area area__title");
@@ -58,6 +79,8 @@ function card__address(address) {
 
   return div;
 }
+
+// tags
 function card__tags(tags) {
   let div = document.createElement("div");
 
@@ -69,6 +92,8 @@ function card__tags(tags) {
   }
   return div;
 }
+
+// description
 function card__description(description) {
   let div = document.createElement("div");
   div.setAttribute("class", "area area__description");
@@ -77,6 +102,7 @@ function card__description(description) {
   return div;
 }
 
+// bottom grid
 function bottom__grid(price, reviews) {
   let div = document.createElement("div");
   div.setAttribute("class", "area area__grid");
@@ -157,6 +183,5 @@ function CardGenerator(data, key) {
   return card;
 }
 
-
-// export the functions 
+// export the functions
 export { CardGenerator, SwiperGenerator };
