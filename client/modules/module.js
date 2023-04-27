@@ -1,5 +1,5 @@
 // components of card
-function block__grid(key = null, tags=null) {
+function block__grid(key = null, tags = null) {
   let div = document.createElement("div");
   div.setAttribute("class", "block__grid--card");
   div.setAttribute("data-name", `${key != null ? key : ""}`);
@@ -188,10 +188,53 @@ function CardGenerator(data, key) {
     card_description,
     bottom_grid
   );
-  
 
   return card;
 }
 
+// filter function
+
+function FilterResult(
+  input_selector,
+  select_selector,
+  reset_selector,
+  cards_element
+) {
+  let input = document.querySelector(input_selector);
+  let select = document.querySelector(select_selector);
+  let reset = document.querySelector(reset_selector);
+  let cards = document.querySelectorAll(cards_element);
+  input.addEventListener("input", () => {
+    let query = input.value.toLowerCase();
+
+    cards.forEach((card, i) => {
+      let name = card.dataset.name.toLowerCase();
+      if (name.includes(query)) {
+        card.style.display = "grid";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+
+  select.addEventListener("change", () => {
+    let tag = select.value;
+    cards.forEach((card, i) => {
+      let tags = card.dataset.tags.toLowerCase();
+      if (tags.includes(tag)) {
+        card.style.display = "grid";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+
+  reset.addEventListener("click", () => {
+    cards.forEach((card) => {
+      card.style.display = "grid";
+    });
+  });
+}
+
 // export the functions
-export { CardGenerator, SwiperGenerator };
+export { CardGenerator, SwiperGenerator, FilterResult };

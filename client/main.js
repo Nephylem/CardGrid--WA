@@ -1,4 +1,8 @@
-import { CardGenerator, SwiperGenerator } from "./modules/module.js";
+import {
+  CardGenerator,
+  SwiperGenerator,
+  FilterResult,
+} from "./modules/module.js";
 
 // SwiperGenerator - initializes the function for image slider
 // CardGenerator - generates card components from fetched data
@@ -15,56 +19,47 @@ fetch(url, {
   method: "GET",
 })
   .then((res) => res.json())
-  .then((json) => saveJson(json))
+  .then((json) => {
+    saveJson(json);
+
+    // generating card components using function CardGenerator
+    let container = document.querySelector(".block__grid--primary");
+
+    for (let i = 0; i < 10; i++) {
+      let data = JSON.parse(sessionStorage.getItem(i));
+      let card = CardGenerator(data, i);
+
+      container.append(card);
+      SwiperGenerator(i);
+    }
+
+    // filter function
+    let input = ".block__filter input";
+    let select = ".block__filter select";
+    let reset = ".block__filter button";
+    let cards = ".block__grid--card";
+
+    FilterResult(input, select, reset, cards);
+  })
   .catch((err) => {
-    alert("Failed to fetch json data");
-  });
+    alert("Failed to fetch json data: Server is closed.");
 
-// generating card components using function CardGenerator
-let container = document.querySelector(".block__grid--primary");
+    // Re-run generating card components using function CardGenerator
+    let container = document.querySelector(".block__grid--primary");
 
-for (let i = 0; i < 10; i++) {
-  let data = JSON.parse(sessionStorage.getItem(i));
-  let card = CardGenerator(data, i);
+    for (let i = 0; i < 10; i++) {
+      let data = JSON.parse(sessionStorage.getItem(i));
+      let card = CardGenerator(data, i);
 
-  container.append(card);
-  SwiperGenerator(i);
-}
-
-// filter function
-
-let input = document.querySelector(".block__filter input");
-let select = document.querySelector(".block__filter select");
-let reset = document.querySelector(".block__filter button");
-let cards = document.querySelectorAll(".block__grid--card");
-input.addEventListener("input", () => {
-  let query = input.value.toLowerCase();
-
-  cards.forEach((card, i) => {
-    let name = card.dataset.name.toLowerCase();
-    if (name.includes(query)) {
-      card.style.display = "grid";
-    } else {
-      card.style.display = "none";
+      container.append(card);
+      SwiperGenerator(i);
     }
-  });
-});
 
-select.addEventListener("change", () => {
-  let tag = select.value;
-  cards.forEach((card, i) => {
-    let tags = card.dataset.tags.toLowerCase();
-    if (tags.includes(tag)) {
-      card.style.display = "grid";
-      console.log(true);
-    } else {
-      card.style.display = "none";
-    }
-  });
-});
+    // filter function
+    let input = ".block__filter input";
+    let select = ".block__filter select";
+    let reset = ".block__filter button";
+    let cards = ".block__grid--card";
 
-reset.addEventListener("click", () => {
-  cards.forEach((card) => {
-    card.style.display = "grid";
+    FilterResult(input, select, reset, cards);
   });
-});
