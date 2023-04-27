@@ -35,6 +35,7 @@ for (let i = 0; i < 10; i++) {
 
 let input = document.querySelector(".block__filter input");
 let select = document.querySelector(".block__filter select");
+let reset = document.querySelector(".block__filter button");
 let cards = document.querySelectorAll(".block__grid--card");
 input.addEventListener("input", () => {
   let query = input.value.toLowerCase();
@@ -59,5 +60,11 @@ select.addEventListener("change", () => {
     } else {
       card.style.display = "none";
     }
+  });
+});
+
+reset.addEventListener("click", () => {
+  cards.forEach((card) => {
+    card.style.display = "block";
   });
 });

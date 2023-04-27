@@ -20,7 +20,7 @@ body {
   gap: 20px 0;
 }
 
-.block__filter { 
+.block__filter {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -28,19 +28,30 @@ body {
   justify-content: center;
   align-items: center;
 }
-.block__filter input { 
+.block__filter input {
   width: 40%;
   height: 50px;
   margin: 0 20px;
   min-width: 100px;
 }
-.block__filter select { 
+.block__filter select {
   width: 20%;
   height: 50px;
   margin: 0 20px;
   min-width: 100px;
 }
 
+.block__filter button {
+  height: 50px;
+  width: 80px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.block__filter button:hover {
+  transform: scale(1.1);
+}
 .block__grid--card {
   position: relative;
   display: grid;
@@ -101,11 +112,11 @@ body {
   font-size: 15px;
 }
 
-.swiper-pagination-bullets.swiper-pagination-horizontal{ 
+.swiper-pagination-bullets.swiper-pagination-horizontal {
   top: 40%;
 }
 
-.swiper-pagination-bullet{
+.swiper-pagination-bullet {
   background: white;
 }
 
@@ -183,7 +194,6 @@ body {
 .area__stars {
   display: none;
   color: #a38181;
-  
 }
 
 .area__stars i {
