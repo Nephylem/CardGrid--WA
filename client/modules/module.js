@@ -1,10 +1,9 @@
 // components of card
-function block__grid(key = null) {
+function block__grid(key = null, tags=null) {
   let div = document.createElement("div");
-  div.setAttribute(
-    "class",
-    `block__grid--card card__key--${key != null ? key : ""}`
-  );
+  div.setAttribute("class", "block__grid--card");
+  div.setAttribute("data-name", `${key != null ? key : ""}`);
+  div.setAttribute("data-tags", `${tags != null ? tags.join(" ") : ""}`);
   return div;
 }
 
@@ -94,6 +93,7 @@ function card__tags(tags) {
     aEl.append(tag);
     div.append(aEl);
   }
+
   return div;
 }
 
@@ -159,8 +159,8 @@ function SwiperGenerator(key) {
     },
     pagination: {
       el: `[data-swiper="pagi-swiper-${key}"]`,
-      clickable: true
-    }
+      clickable: true,
+    },
   });
 }
 
@@ -169,7 +169,7 @@ function SwiperGenerator(key) {
 function CardGenerator(data, key) {
   //   card block
   //   data title as key name
-  let card = block__grid(data.title);
+  let card = block__grid(data.title, data.tags);
 
   //   contents of card
   let btn_heart = button__heart(key);
@@ -188,6 +188,8 @@ function CardGenerator(data, key) {
     card_description,
     bottom_grid
   );
+  
+
   return card;
 }
 

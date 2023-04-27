@@ -30,3 +30,34 @@ for (let i = 0; i < 10; i++) {
   container.append(card);
   SwiperGenerator(i);
 }
+
+// filter function
+
+let input = document.querySelector(".block__filter input");
+let select = document.querySelector(".block__filter select");
+let cards = document.querySelectorAll(".block__grid--card");
+input.addEventListener("input", () => {
+  let query = input.value.toLowerCase();
+
+  cards.forEach((card, i) => {
+    let name = card.dataset.name.toLowerCase();
+    if (name.includes(query)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
+
+select.addEventListener("change", () => {
+  let tag = select.value;
+  cards.forEach((card, i) => {
+    let tags = card.dataset.tags.toLowerCase();
+    if (tags.includes(tag)) {
+      card.style.display = "block";
+      console.log(true);
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
