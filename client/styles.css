@@ -114,6 +114,7 @@ body {
 
 .swiper-pagination-bullets.swiper-pagination-horizontal {
   top: 40%;
+  height: 20px;
 }
 
 .swiper-pagination-bullet {
