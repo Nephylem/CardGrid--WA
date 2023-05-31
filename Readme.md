@@ -1,4 +1,4 @@
-Card Grid using HTML, CSS and Javascript
+<h1>Card Grid using HTML, CSS and Javascript<h1/>
 
 <h4>Set Up Instructions<h4/>
   
